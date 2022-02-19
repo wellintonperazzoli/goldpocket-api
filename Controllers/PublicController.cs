@@ -16,7 +16,7 @@ namespace GoldPocket.Controllers.API
         [HttpPut]
         [HttpDelete]
         [HttpHead]
-        public IActionResult Get() => Ok("Hello");
+        public IActionResult Get() => Redirect("https://goldpocket.vercel.app/");
 
     }
 

@@ -38,6 +38,11 @@ namespace GoldPocket.Controllers.API
             Ok(await _context.Item.Where(l => l.appUserId == _userService.getCurrentUser().Result.Id).Select(u => u.Name).ToListAsync());
 
         [HttpGet]
+        [Route("itemmeasure/")]
+        public async Task<IActionResult> ItemMeasure() =>
+            Ok(await _context.Item.Where(l => l.appUserId == _userService.getCurrentUser().Result.Id).Select(u => new { Name = u.Name, MeasureType = u.measureType }).ToListAsync());
+
+        [HttpGet]
         [Route("itemcategory/")]
         public async Task<IActionResult> ItemCategory() =>
             Ok(await _context.Category.Where(l => l.appUserId == _userService.getCurrentUser().Result.Id && l.Type == CategoryTypes.Item).Select(u => u.Name).ToListAsync());
