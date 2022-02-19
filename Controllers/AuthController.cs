@@ -26,7 +26,8 @@ namespace GoldPocket.Controllers.API
             appUser appUser = new appUser
             {
                 Email = user.Email,
-                PasswordHash = user.Password
+                PasswordHash = user.Password,
+                UserName = user.Email,
             };
             var result = await _service.Create(appUser);
             appUser.PasswordHash = null;
