@@ -79,7 +79,6 @@ C:\Users\wellc\OneDrive\15. Projects\goldpocket-api\bin\Debug\net6.0\goldpocket-
 C:\Users\wellc\OneDrive\15. Projects\goldpocket-api\bin\Debug\net6.0\goldpocket-api.deps.json
 C:\Users\wellc\OneDrive\15. Projects\goldpocket-api\bin\Debug\net6.0\goldpocket-api.runtimeconfig.json
 C:\Users\wellc\OneDrive\15. Projects\goldpocket-api\bin\Debug\net6.0\goldpocket-api.dll
-C:\Users\wellc\OneDrive\15. Projects\goldpocket-api\bin\Debug\net6.0\ref\goldpocket-api.dll
 C:\Users\wellc\OneDrive\15. Projects\goldpocket-api\bin\Debug\net6.0\goldpocket-api.pdb
 C:\Users\wellc\OneDrive\15. Projects\goldpocket-api\bin\Debug\net6.0\Humanizer.dll
 C:\Users\wellc\OneDrive\15. Projects\goldpocket-api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
@@ -146,3 +145,4 @@ C:\Users\wellc\OneDrive\15. Projects\goldpocket-api\obj\Debug\net6.0\goldpocket-
 C:\Users\wellc\OneDrive\15. Projects\goldpocket-api\obj\Debug\net6.0\ref\goldpocket-api.dll
 C:\Users\wellc\OneDrive\15. Projects\goldpocket-api\obj\Debug\net6.0\goldpocket-api.pdb
 C:\Users\wellc\OneDrive\15. Projects\goldpocket-api\obj\Debug\net6.0\goldpocket-api.genruntimeconfig.cache
+C:\Users\wellc\OneDrive\15. Projects\goldpocket-api\obj\Debug\net6.0\refint\goldpocket-api.dll

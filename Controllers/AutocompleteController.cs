@@ -40,7 +40,7 @@ namespace GoldPocket.Controllers.API
         [HttpGet]
         [Route("itemmeasure/")]
         public async Task<IActionResult> ItemMeasure() =>
-            Ok(await _context.Item.Where(l => l.appUserId == _userService.getCurrentUser().Result.Id).Select(u => new { Name = u.Name, MeasureType = u.measureType }).ToListAsync());
+            Ok(await _context.Item.Where(l => l.appUserId == _userService.getCurrentUser().Result.Id).Select(u => new { Name = u.Name, MeasureType = u.measureType, Category = u.Category.Name }).ToListAsync());
 
         [HttpGet]
         [Route("itemcategory/")]
