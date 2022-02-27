@@ -38,6 +38,7 @@ services.AddTransient<ExpenseService>();
 services.AddTransient<ExpenseItemService>();
 services.AddTransient<AuthService>();
 services.AddTransient<ChartService>();
+services.AddTransient<SavingService>();
 
 services.AddCors();
 
@@ -143,4 +144,10 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+using (var scope = app.Services.CreateScope())
+{
+    var serviceProvider = scope.ServiceProvider;
+    var context = serviceProvider.GetRequiredService<GoldPocketContext>();
+    context.Database.Migrate();
+    app.Run();
+}

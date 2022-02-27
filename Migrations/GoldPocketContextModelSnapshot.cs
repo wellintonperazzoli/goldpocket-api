@@ -101,10 +101,10 @@ namespace GoldPocket.Migrations
                     b.Property<DateTime>("dateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("expenseId")
+                    b.Property<int>("expenseId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("itemId")
+                    b.Property<int>("itemId")
                         .HasColumnType("int");
 
                     b.Property<double>("itemQuantity")
@@ -174,6 +174,30 @@ namespace GoldPocket.Migrations
                     b.HasIndex("appUserId");
 
                     b.ToTable("Location");
+                });
+
+            modelBuilder.Entity("GoldPocket.Models.DB.SavingDb", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<double>("Value")
+                        .HasColumnType("float");
+
+                    b.Property<string>("appUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("dateTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("appUserId");
+
+                    b.ToTable("Saving");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -431,11 +455,15 @@ namespace GoldPocket.Migrations
 
                     b.HasOne("GoldPocket.Models.DB.ExpenseDb", "Expense")
                         .WithMany("expensesItems")
-                        .HasForeignKey("expenseId");
+                        .HasForeignKey("expenseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("GoldPocket.Models.DB.ItemDb", "Item")
                         .WithMany("expensesItems")
-                        .HasForeignKey("itemId");
+                        .HasForeignKey("itemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Expense");
 
@@ -465,6 +493,15 @@ namespace GoldPocket.Migrations
                 {
                     b.HasOne("GoldPocket.Models.DB.appUser", "appUser")
                         .WithMany("Locations")
+                        .HasForeignKey("appUserId");
+
+                    b.Navigation("appUser");
+                });
+
+            modelBuilder.Entity("GoldPocket.Models.DB.SavingDb", b =>
+                {
+                    b.HasOne("GoldPocket.Models.DB.appUser", "appUser")
+                        .WithMany()
                         .HasForeignKey("appUserId");
 
                     b.Navigation("appUser");

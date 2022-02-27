@@ -24,5 +24,6 @@ namespace GoldPocket.Data
         public DbSet<ItemDb> Item { get; set; }
         public DbSet<expenseItemDb> expenseItem { get; set; }
         public DbSet<ExpenseDb> Expense { get; set; }
+        public DbSet<SavingDb> Saving { get; set; }
     }
 }
